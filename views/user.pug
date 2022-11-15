@@ -2,13 +2,27 @@ extends baseTemplate
 
 block content
     .container
-        h1 &#x1F3E6; Loan Details &#x1F3E6;
+        h1 User Profile
         div.figure_container
             figure.course
                 a.course__back(href='/')
                     span.emoji-left &#x1F448;
                     | Back
-                h2.course__name Loans
+                h2.course__name User Information
+                table.table-header
+                    thead
+                        tr
+                            th(scope='col') Name
+                            th(scope='col') Email
+                            th(scope='col') Role
+                    tbody
+                            tr.table-secondary
+                                td #{user.name}
+                                td #{user.email}
+                                td #{user.role}
+        div.figure_container
+            figure.course
+                h2.course__name Your Loans
                 table.table-header
                     thead
                         tr
@@ -33,14 +47,3 @@ block content
                                 td #{loan.loanTermYears}
                                 td #{loan.loanType}
                                 td #{loan.description}
-            //ul
-            //    each loan in loans
-            //        li.course__info ID: #{loan.id}
-            //        ul
-            //            li.course__info Customer Name: #{loan.customerName}
-            //            li.course__info Phone Number: #{loan.phoneNumber}
-            //            li.course__info Address: #{loan.address}
-            //            li.course__info Interest Rate: #{loan.interest}
-            //            li.course__info Loan Term: #{loan.loanTermYears}
-            //            li.course__info Loan Type: #{loan.loanType}
-            //            li.course__info Description: #{loan.description}
